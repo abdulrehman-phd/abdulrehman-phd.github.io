@@ -3,244 +3,171 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abdul Rehman — Personal Website</title>
-  <meta name="description" content="Abdul Rehman — Research in probabilistic ML, RIS, vehicular communication systems (V2X)." />
-  <meta property="og:title" content="Abdul Rehman — Personal Website" />
-  <meta property="og:description" content="Research in probabilistic ML, RIS, vehicular communication systems (V2X)." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://YOUR-USERNAME.github.io" />
-  <meta name="color-scheme" content="light dark" />
+  <title>Abdul Rehman, PhD — CV</title>
+  <meta name="description" content="Abdul Rehman — Wireless Networks, V2X, 5G/6G, URLLC, IoT" />
   <style>
     :root {
       --bg: #ffffff;
-      --fg: #0f172a; /* slate-900 */
-      --muted: #475569; /* slate-600 */
-      --primary: #2563eb; /* blue-600 */
-      --border: #e5e7eb; /* gray-200 */
-      --card: #f8fafc; /* slate-50 */
-      --radius: 16px;
+      --fg: #0f172a;
+      --muted: #475569;
+      --primary: #2563eb;
+      --section: #0369a1;
+      --highlight: #60a5fa;
+      --infocolor: #065f46;
+      --border: #e5e7eb;
+      --card: #f8fafc;
+      --radius: 12px;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1020;
-        --fg: #f1f5f9; /* slate-100 */
-        --muted: #cbd5e1; /* slate-300 */
-        --primary: #60a5fa; /* blue-400 */
-        --border: #1f2937; /* gray-800 */
-        --card: #0f172a; /* slate-900 */
-      }
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
     body {
-      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg); color: var(--fg); line-height: 1.6;
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      padding: 1rem;
     }
+    h1,h2,h3 { margin-top: 1.2em; margin-bottom: .4em; }
+    h1 { color: #003366; }
+    h2 { color: var(--section); border-bottom: 2px solid var(--border); padding-bottom: .2em; }
     a { color: var(--primary); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    .container { max-width: 980px; padding: 0 1.25rem; margin: 0 auto; }
-    header {
-      position: sticky; top: 0; z-index: 100; backdrop-filter: saturate(180%) blur(8px);
-      background: color-mix(in oklab, var(--bg) 85%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .75rem 0; }
-    .brand { font-weight: 700; letter-spacing: .2px; }
-    .menu { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .menu a { padding: .4rem .6rem; border-radius: 999px; }
-    .menu a:hover { background: var(--card); text-decoration: none; }
-
-    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; padding: 3rem 0 2rem; }
-    .hero .title { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; margin: 0; }
-    .hero .subtitle { color: var(--muted); margin-top: .5rem; }
-    .actions { display: flex; gap: .75rem; margin-top: 1.25rem; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid var(--border); padding: .6rem .9rem; border-radius: 999px; font-weight: 600; }
-    .btn.primary { background: var(--primary); color: white; border-color: transparent; }
-    .btn:hover { text-decoration: none; opacity: .95; }
-    .avatar {
-      width: 180px; aspect-ratio: 1; border-radius: 50%; object-fit: cover; border: 4px solid var(--border); background: var(--card);
-      box-shadow: 0 10px 30px rgba(2, 6, 23, .15);
-    }
-
-    section { padding: 2.5rem 0; border-top: 1px solid var(--border); }
-    h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); margin: 0 0 1rem; }
-    .lead { color: var(--muted); }
-
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
-    .card { grid-column: span 12; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; }
-    @media (min-width: 720px) {
-      .card.half { grid-column: span 6; }
-      .card.third { grid-column: span 4; }
-    }
-
-    .item + .item { margin-top: .75rem; }
-    .item h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
-    .meta { font-size: .9rem; color: var(--muted); }
-    .tags { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .5rem; }
-    .tag { font-size: .8rem; padding: .15rem .5rem; background: var(--bg); border: 1px solid var(--border); border-radius: 999px; }
-
-    .timeline { position: relative; }
-    .timeline:before { content: ""; position: absolute; top: .3rem; bottom: .3rem; left: 10px; width: 2px; background: var(--border); }
-    .titem { position: relative; padding-left: 2rem; margin: 0 0 1rem; }
-    .titem:before { content: ""; position: absolute; left: 4px; top: .3rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); }
-    .titem h3 { margin: 0; font-size: 1rem; }
-
-    footer { padding: 2rem 0; border-top: 1px solid var(--border); color: var(--muted); font-size: .95rem; }
-    .links { display: flex; gap: .75rem; flex-wrap: wrap; }
-
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .center { text-align: center; }
+    .highlight { color: var(--highlight); font-weight: 600; }
+    .contact { margin: .6em 0; color: var(--infocolor); }
+    ul { margin-top: .2em; margin-bottom: 1em; padding-left: 1.2em; }
+    li { margin-bottom: .3em; }
+    .section { margin-top: 2rem; }
+    .sub { color: var(--muted); font-style: italic; }
+    .two-col { display: flex; justify-content: space-between; flex-wrap: wrap; }
+    .two-col div { flex: 1; min-width: 250px; }
+    footer { margin-top: 3rem; text-align: center; font-size: .9em; color: var(--muted); }
   </style>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Abdul Rehman",
-      "jobTitle": "Researcher",
-      "affiliation": {"@type": "Organization", "name": "—"},
-      "url": "https://YOUR-USERNAME.github.io",
-      "sameAs": [
-        "https://github.com/YOUR-USERNAME",
-        "https://scholar.google.com/citations?user=YOURID",
-        "https://www.linkedin.com/in/YOUR-USERNAME"
-      ]
-    }
-  </script>
 </head>
 <body>
-  <a class="sr-only" href="#main">Skip to content</a>
-  <header>
-    <div class="container nav" role="navigation" aria-label="Main">
-      <div class="brand">Abdul Rehman</div>
-      <nav class="menu">
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main id="main" class="container">
-    <section class="hero" id="about">
-      <div>
-        <h1 class="title">Hi, I'm Abdul Rehman</h1>
-        <p class="subtitle">I work on <strong>probabilistic ML</strong>, <strong>reconfigurable intelligent surfaces (RIS)</strong>, Bayesian learning, and <strong>vehicular communication systems (V2X)</strong>.</p>
-        <div class="actions">
-          <a class="btn primary" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
-          <a class="btn" href="mailto:your.email@example.com">Email me</a>
-          <a class="btn" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noopener">Google Scholar</a>
-        </div>
-      </div>
-      <div style="display:flex; justify-content:center;">
-        <img class="avatar" src="https://avatars.githubusercontent.com/u/000000?v=4" alt="Profile photo of Abdul Rehman" />
-      </div>
-    </section>
+<div class="center">
+  <h1>Abdul Rehman, PhD</h1>
+  <div class="sub">Wireless Networks | 5G/6G-V2X | Energy-Efficient IoT | URLLC</div>
+  <div class="contact">
+    📧 <a href="mailto:abdulrehman@sjtu.edu.cn">abdulrehman@sjtu.edu.cn</a> |
+    📧 <a href="mailto:iamsaith@outlook.com">iamsaith@outlook.com</a> |
+    📞 +39 3517261030 |
+    📍 L’Aquila, Italy
+  </div>
+  <div class="contact">
+    <a href="https://abdulrehman-phd.github.io/">GitHub</a> •
+    <a href="https://orcid.org/0009-0008-3658-4913">ORCID</a> •
+    <a href="https://www.linkedin.com/in/iamsaith">LinkedIn</a> •
+    <a href="https://tinyurl.com/y2kmr53j">Scholar</a> •
+    <a href="https://www.researchgate.net/profile/Abdul-Rehman-29?ev=hdr_xprf">ResearchGate</a>
+  </div>
+</div>
 
-    <section>
-      <h2>Research Focus</h2>
-      <p class="lead">My research spans wireless communications and machine learning, with a focus on <em>RIS-assisted V2X</em>, outage analysis, interference modeling, and end-to-end performance (latency, reliability, energy efficiency).</p>
-    </section>
+<div class="section">
+  <h2>Professional Summary</h2>
+  <ul>
+    <li><b>Research Lead</b> in V2X/5G/6G, with a 25% reliability improvement in urban testbeds via novel protocols.</li>
+    <li><b>Modeling Expert</b> in MATLAB; reduced simulation runtime by 30% via optimized channel algorithms.</li>
+    <li><b>Published Author</b> of peer-reviewed works with 100+ citations.</li>
+    <li><b>Interdisciplinary Collaborator</b> securing and leading funded projects in IoT, URLLC, and CAVs.</li>
+  </ul>
+</div>
 
-    <section id="publications">
-      <h2>Selected Publications</h2>
-      <div class="grid">
-        <article class="card item">
-          <h3>RIS-Assisted V2X: Outage Probability under Mobility</h3>
-          <div class="meta">Electronics, 2024 · with Coauthors</div>
-          <div class="tags">
-            <span class="tag">RIS</span>
-            <span class="tag">V2X</span>
-            <span class="tag">Outage</span>
-          </div>
-          <p>We analyze outage probability for RIS-assisted 5G-V2X considering mobility and optimized RIS placement.</p>
-          <p><a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">BibTeX</a></p>
-        </article>
-        <article class="card item">
-          <h3>LTE V2V Performance Assisted by RIS</h3>
-          <div class="meta">2025 (under review)</div>
-          <div class="tags"><span class="tag">LTE-V2V</span><span class="tag">RIS</span><span class="tag">Interference</span></div>
-          <p>Simulation-backed study on RIS gain across vehicle density, MCS, bandwidth, and packet dimensions.</p>
-          <p><a href="#">PDF</a> · <a href="#">Code</a></p>
-        </article>
-      </div>
-    </section>
+<div class="section">
+  <h2>Qualification</h2>
+  <p><span class="highlight">Ph.D. in ICT</span> (2021–2024) — <a href="https://www.univaq.it/index.php">University of L’Aquila, Italy</a><br>
+  Thesis: <i>Performance Analysis of Multiple Access Protocols for Sidelink Vehicular Communications</i></p>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <article class="card half">
-          <h3>RIS-aided 5G-V2X Simulator</h3>
-          <p>MATLAB scripts for outage, latency, and energy-efficiency with realistic interference models.</p>
-          <p><a href="https://github.com/YOUR-USERNAME/ris-v2x-sim" target="_blank" rel="noopener">Repository</a></p>
-        </article>
-        <article class="card half">
-          <h3>O-RAN vs LOS/NLOS Performance</h3>
-          <p>Comparative analysis and visualization toolkit for O-RAN and classical LOS/NLOS scenarios.</p>
-          <p><a href="https://github.com/YOUR-USERNAME/oran-vs-losnlos" target="_blank" rel="noopener">Repository</a></p>
-        </article>
-      </div>
-    </section>
+  <p><span class="highlight">MSc in Electronics & Communication Eng.</span> (2017–2019) — <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University, China</a><br>
+  Thesis: <i>Accurate and Direct GNSS/PDR Integration...</i></p>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="titem">
-          <h3>Postdoctoral Researcher — University / Lab</h3>
-          <div class="meta">2025 — Present</div>
-          <p>Research on RIS-assisted vehicular communication and statistical signal processing.</p>
-        </div>
-        <div class="titem">
-          <h3>PhD — Telecommunications Engineering</h3>
-          <div class="meta">2019 — 2024</div>
-          <p>Thesis on outage probability, mobility effects, and RIS optimization for V2X.</p>
-        </div>
-      </div>
-    </section>
+  <p><span class="highlight">BSc in Electrical (Telecommunication) Eng.</span> (2013–2017) — <a href="https://gcuf.edu.pk/">GCU Faisalabad, Pakistan</a><br>
+  Thesis: <i>Deforestation Analysis of Northern Pakistan Using Image Processing...</i></p>
+</div>
 
-    <section id="achievements">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Reviewer for IEEE T-VT, IEEE Comms Letters, Elsevier Ad Hoc Networks.</li>
-        <li>Multiple fellowships and grants; active publications in RIS/V2X.</li>
-        <li>Open-source contributor to MATLAB toolboxes for wireless research.</li>
-      </ul>
-    </section>
+<div class="section">
+  <h2>Research Experience</h2>
+  <p><span class="highlight">Postdoctoral Researcher</span> (2024–2025) — <a href="https://www.ieiit.cnr.it/">CNR-IEIIT, University of Bologna</a><br>
+  Focus: StoCAV Matlab simulator, SIL/HIL setups, Q1 journal publication.</p>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="lead">The fastest way to reach me is via email. I'm also active on GitHub and Google Scholar.</p>
-      <div class="links">
-        <a class="btn" href="mailto:your.email@example.com">your.email@example.com</a>
-        <a class="btn" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://scholar.google.com/citations?user=YOURID" target="_blank" rel="noopener">Google Scholar</a>
-        <a class="btn" href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </section>
-  </main>
+  <p><span class="highlight">Researcher</span> (2021–2024) — <a href="http://exemerge.disim.univaq.it/">EX-Emerge Center, L’Aquila</a><br>
+  Focus: URLLC methods, IRS-aided algorithms, sidelink interference modeling.</p>
 
-  <footer>
-    <div class="container">
-      <div>© <span id="year"></span> Abdul Rehman. All rights reserved.</div>
-    </div>
-  </footer>
+  <p><span class="highlight">Research Assistant</span> (2017–2019) — <a href="https://nls.sjtu.edu.cn/web/index">SJTU Institute for Sensing and Navigation</a><br>
+  Focus: GNSS/PDR integration, adaptive Kalman filtering, navigation prototype.</p>
+</div>
 
-  <script>
-    // Update year automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Smooth scroll for same-page links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href');
-        if (id.length > 1) {
-          const el = document.querySelector(id);
-          if (el) { e.preventDefault(); el.scrollIntoView({behavior: 'smooth'}); }
-        }
-      });
-    });
-  </script>
+<div class="section">
+  <h2>Key Publications</h2>
+  <ul>
+    <li>Rehman, A., et al. (2025). O-RAN-Enabled Adaptive Relaying... <i>IEEE Access</i> (under review)</li>
+    <li>Rehman, A., Valentini, R., Di Marco, P. (2023). Multiple Access Interference... <i>MDPI Sensors</i></li>
+    <li>Rehman, A., et al. (2020). GNSS/PDR Integration Using EKF. <i>Gyroscopy and Navigation</i></li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Teaching & Supervision</h2>
+  <p>Lecturer (2019–2020) — Venture College of Engineering, Islamabad<br>
+  Courses: Communication Systems, Satellite Communication, Wireless Networks.</p>
+  <p>Supervised 15+ theses across PhD/MSc/BSc; multiple awards received.</p>
+</div>
+
+<div class="section">
+  <h2>Languages</h2>
+  <p>English: Fluent • Italian: Basic • Urdu: Native • Chinese: Basic</p>
+</div>
+
+<div class="section">
+  <h2>Technical Skills</h2>
+  <ul>
+    <li>Programming: MATLAB, Python, C++</li>
+    <li>Simulation: NS-3, OMNeT++, SUMO, Simu5G</li>
+    <li>ML/Optimization: TensorFlow, scikit-learn, Gurobi, CPLEX</li>
+    <li>Tools: LaTeX, Linux, VS Code</li>
+    <li>Protocols: LTE-V2X, 5G NR-V2X, MQTT, CoAP</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Grants & Awards</h2>
+  <ul>
+    <li><b>Postdoctoral Fellowship</b> (CNR, Italy, 2024)</li>
+    <li><b>Ph.D. Scholarship</b> (MIUR-funded, 2021–2024)</li>
+    <li><b>Certificate of Honor</b> (China Satellite Navigation Conf., 2019)</li>
+    <li><b>MSc Scholarship (CSC)</b> — SJTU, 2017–2019</li>
+    <li><b>National ICT R&D Merit Scholarship</b> — Pakistan, 2013–2017</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Professional Development</h2>
+  <ul>
+    <li>O-RAN Training (2025), 6G Future Connectivity (2024)</li>
+    <li>Research Methods & Horizon Europe Grant Writing (2023)</li>
+    <li>ML (Stanford, 2019), Data Science (IBM, 2018)</li>
+    <li>CCNA, Coursera certifications (2016–2017)</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Academic Service</h2>
+  <p>Reviewer: IEEE TVT, IEEE ComL, Elsevier Ad Hoc Networks (10+ manuscripts)</p>
+  <p>Roles: Session Chair (IEEE Meditcom 2022), TPC Member (IEEE VTC-Spring 2024), PhD evaluation committee member.</p>
+</div>
+
+<div class="section">
+  <h2>References</h2>
+  <p>Prof. Barbara Mavì Masini (CNR, Italy) — <a href="mailto:barbaramavi.masini@cnr.it">barbaramavi.masini@cnr.it</a></p>
+  <p>Prof. Piergiuseppe Di Marco (Univ. L’Aquila) — <a href="mailto:piergiuseppe.dimarco@univaq.it">piergiuseppe.dimarco@univaq.it</a></p>
+  <p>Dr. Roberto Valentini (Univ. L’Aquila) — <a href="mailto:roberto.valentini@univaq.it">roberto.valentini@univaq.it</a></p>
+  <p>Prof. Fortunato Santucci (Univ. L’Aquila) — <a href="mailto:fortunato.santucci@univaq.it">fortunato.santucci@univaq.it</a></p>
+</div>
+
+<footer>
+  Page updated: Sept 2025 • Abdul Rehman
+</footer>
+
 </body>
 </html>
+
